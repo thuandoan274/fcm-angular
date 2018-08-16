@@ -13,7 +13,7 @@ firebase.initializeApp(config);
 
 const messaging = firebase.messaging();
 messaging.setBackgroundMessageHandler(function (payload) {
-  const title = 'Hello World from SW!';
+  const title = payload.data.body;
   const options = {
     body: payload.data.status
   };
